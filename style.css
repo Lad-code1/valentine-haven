@@ -1,0 +1,161 @@
+/* --- Body & Page Layout --- */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("heart-bg.jpg");
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+/* --- Puzzle Container --- */
+#puzzle-container {
+    text-align: center;
+}
+
+.hearts {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.heart {
+    cursor: pointer;
+}
+
+.heart.clicked {
+    color: hotpink;
+    transform: scale(1.3);
+}
+
+/* --- Envelope --- */
+#envelope-container {
+    display: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#envelope {
+    width: 200px;
+    animation: pulse 1.5s infinite;
+}
+
+/* --- Letter Window --- */
+#letter-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-window {
+    width: 90vw;
+    max-width: 800px;
+    aspect-ratio: 3 / 2;
+    background-image: url("window.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 180px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: 0.6s;
+}
+
+.letter-window.open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- Cat Image --- */
+.cat {
+    width: 240px;
+}
+
+/* --- Buttons --- */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn {
+    width: 120px;
+    cursor: pointer;
+}
+
+.no-btn {
+    cursor: default;
+}
+
+/* --- Final Text --- */
+.final-text {
+    display: none;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+/* --- Memories Section --- */
+#memories-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 240, 245, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.memory-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 520px;
+    text-align: center;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.memory-grid img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    padding: 6px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* --- Buttons inside Letter/Memory --- */
+#to-letter-btn {
+    padding: 10px 20px;
+    background: hotpink;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* --- Final Letter Window --- */
+#final-letter {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Animations --- */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
